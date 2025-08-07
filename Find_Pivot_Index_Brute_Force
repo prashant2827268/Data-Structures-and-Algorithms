@@ -1,0 +1,34 @@
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int n = nums.length;
+        int leftSum;
+        int rightSum;
+        int left;
+        int right;
+        for(int i=0; i< n; i++)
+        {
+            left = 0;
+            right = n-1;
+            rightSum=0;
+            leftSum=0;
+            while(left<i)
+            {
+                leftSum += nums[left];
+                left++;
+            }
+            while(right>i){
+                rightSum += nums[right];
+                right--;
+            }
+           
+            if(leftSum == rightSum){
+                return i;
+            }
+
+
+        }
+
+        return -1;
+        
+    }
+}
