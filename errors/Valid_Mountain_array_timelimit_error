@@ -1,0 +1,28 @@
+class Solution {
+    public boolean validMountainArray(int[] arr) {
+        int n = arr.length;
+        if(n<3){
+            return false;
+        }
+
+        int count = 0;
+        int left = 0;
+        int right = n-1;
+        while(left < right){
+            while(arr[left+1] != arr[right] && arr[left] < arr[left+1] )
+            {
+                left++;
+            }
+            while(arr[left] != arr[right] && arr[right] < arr[right-1] )
+            {
+                right--;
+            }
+        }
+        if(left == right){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+}
