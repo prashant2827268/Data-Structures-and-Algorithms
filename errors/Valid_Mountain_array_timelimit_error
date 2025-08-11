@@ -1,3 +1,5 @@
+Here in this I got timelimit error because of O(n^2) complexity
+
 class Solution {
     public boolean validMountainArray(int[] arr) {
         int n = arr.length;
