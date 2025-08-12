@@ -28,3 +28,36 @@ class Solution {
         
     }
 }
+
+
+** Here in this I tried to cut down the time complexity from O(N^2) to O(N) but my solution failed on a case [2,0,2]
+class Solution {
+    public boolean validMountainArray(int[] arr) {
+        int n = arr.length;
+        if(n<3){
+            return false;
+        } 
+        int left = 0;
+        int right = 0;
+        for(int i = 0; i< n-1;i++){
+            if(arr[i]<arr[i+1]){
+                left++;
+                continue;
+            }else if(arr[i] > arr[i+1]){
+                right++;
+                continue;
+
+            }
+            else{
+                return false;
+            }
+        }
+
+        if(left == n-1 || right == n-1){
+            return false;
+        }
+        return true;
+
+      
+    }
+}
