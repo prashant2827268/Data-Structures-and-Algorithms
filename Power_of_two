@@ -1,0 +1,23 @@
+// This is the solution accepted by leetcode, I dont like it because it beats only 1%
+
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        int result = 1;
+        if(n<1){
+            return false;
+        }else if(n == 1){
+            return true;
+        }else{
+            for(int i = 1; i<=Math.sqrt(n)+1 ;i++){
+            result = result * 2;
+            if(result == n){
+                return true;
+            }else if(result > n){
+               return false;
+            }
+        }
+        }
+        
+        return false;
+    }
+}
